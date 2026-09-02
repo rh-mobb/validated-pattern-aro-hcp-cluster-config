@@ -5,7 +5,7 @@ kind: ClusterRoleBinding
 metadata:
   name: entra-cluster-admin-group
   labels:
-    app.kubernetes.io/part-of: vp-aro-hcp-cluster-config
+    app.kubernetes.io/part-of: validated-pattern-aro-hcp-cluster-config
 subjects:
   - kind: Group
     apiGroup: rbac.authorization.k8s.io

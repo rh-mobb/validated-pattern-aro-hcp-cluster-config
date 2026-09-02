@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - github.com/rh-mobb/aro-hcp//gitops/overlays/private?ref=main
+  - github.com/rh-mobb/validated-pattern-aro-hcp//gitops/overlays/private?ref=main
   - ../../base
