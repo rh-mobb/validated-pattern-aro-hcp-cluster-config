@@ -1,0 +1,16 @@
+# Cloud Services SSA Team - APAC. Subject name is the Entra object ID
+# (groups claim), not the display name.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: entra-cluster-admin-group
+  labels:
+    app.kubernetes.io/part-of: vp-aro-hcp-cluster-config
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: "0ef73eda-7c79-4ae1-a848-9cfe87b10f87"
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
