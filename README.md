@@ -41,7 +41,7 @@ The signed-in deployer is still bound as a **User** by external-auth (`entra-clu
 ```bash
 cd references/vp-aro-hcp-cluster-config   # from an aro-hcp checkout, or clone this repo
 git remote add origin git@github.com:rh-mobb/vp-aro-hcp-cluster-config.git
-git push -u origin main
+git push -u origin HEAD
 ```
 
-Create the empty GitHub repo first (no README), then push.
+Create the empty GitHub repo first (no README), then push. The first commit is on `feat/initial-overlay`; set that as the default branch or merge to `main` on GitHub.
