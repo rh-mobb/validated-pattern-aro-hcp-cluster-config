@@ -12,7 +12,7 @@ overlays/public/              # Public API clusters
 overlays/private/             # Private API clusters
 ```
 
-Each overlay includes `github.com/rh-mobb/validated-pattern-aro-hcp//gitops/overlays/<name>?ref=main` plus `base/`.
+Each overlay includes `github.com/rh-mobb/validated-pattern-aro-hcp//gitops/overlays/<name>` plus `base/`. Until [PR #14](https://github.com/rh-mobb/validated-pattern-aro-hcp/pull/14) merges (HCP Compliance worker scheduling), the ref is `feat/cluster-config-oidc-rbac` instead of `main`.
 
 ## Bootstrap
 
