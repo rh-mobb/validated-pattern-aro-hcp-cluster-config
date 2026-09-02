@@ -34,4 +34,4 @@ If this GitHub repo is **private**, add it as a repository credential in OpenShi
 
 Add people in Entra, not with more YAML. The Entra app must emit group object IDs (`groupMembershipClaims=SecurityGroup`); `make cluster.<name>.external-auth` in the installer sets that.
 
-The signed-in deployer is still bound as a **User** by external-auth (`entra-cluster-admin`) so bootstrap works before Argo is healthy.
+The signed-in deployer is a **separate** User binding (`entra-cluster-admin`) from installer `external-auth` — break-glass until Argo syncs this overlay. Skip it when this group already covers you: `SKIP_RBAC_USER=1 make cluster.<name>.external-auth`.
