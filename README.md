@@ -10,6 +10,7 @@ Put tenant-specific desired state here (Entra group `cluster-admin`, extra Appli
 base/                         # org additions (today: one ClusterRoleBinding)
 overlays/public/              # Public API clusters
 overlays/private/             # Private API clusters
+overlays/aro-virt/            # Virt-ready profile (same installer baseline as public)
 ```
 
 Each overlay includes `github.com/rh-mobb/validated-pattern-aro-hcp//gitops/overlays/<name>` plus `base/`. Until [PR #14](https://github.com/rh-mobb/validated-pattern-aro-hcp/pull/14) merges (HCP Compliance worker scheduling), the ref is `feat/cluster-config-oidc-rbac` instead of `main`.
@@ -24,7 +25,7 @@ GITOPS_SOURCE_ROOT=overlays \
   make cluster.<name>.bootstrap
 ```
 
-`GITOPS_OVERLAY` / `api_visibility` still pick `public` vs `private`. Changing repo later is another bootstrap (or `oc apply` of Application `cluster-config`).
+`GITOPS_OVERLAY` / `api_visibility` still pick `public` vs `private`. Profile directory `clusters/aro-virt` selects overlay `aro-virt`. Changing repo later is another bootstrap (or `oc apply` of Application `cluster-config`).
 
 If this GitHub repo is **private**, add it as a repository credential in OpenShift GitOps. The installer base is public.
 
