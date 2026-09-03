@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  # Same baseline as public until gitops/overlays/aro-virt is on installer main.
+  - github.com/rh-mobb/validated-pattern-aro-hcp//gitops/overlays/public?ref=main
+  - ../../base
